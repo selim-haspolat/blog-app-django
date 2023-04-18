@@ -1,4 +1,4 @@
-# Blogg-app
+# Blog-app
 
 ## About
 
