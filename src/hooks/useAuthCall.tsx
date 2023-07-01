@@ -15,7 +15,6 @@ import { toastErrorNotify, toastSuccessNotify } from '../helper/Toastify'
 const useAuthCall = () => {
   interface LoginInfo {
     username: string;
-    email: string;
     password: string;
   }
 
@@ -29,7 +28,7 @@ const useAuthCall = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const BASE_URL = "https://32185.fullstack.clarusway.com/";
+  const BASE_URL = "http://127.0.0.1:8000/";
 
   const login = async (info: LoginInfo) => {
     dispatch(fetchStart());

@@ -9,6 +9,8 @@ const NewBlog = () => {
   const { getCategories, postBlog } = useBlogCall();
   const { categories } = useSelector((state: any) => state.blog);
 
+  console.log(categories);
+
   useEffect(() => {
     getCategories();
   }, []);
@@ -32,7 +34,7 @@ const NewBlog = () => {
         initialValues={{
           title: "",
           image: "",
-          category: "Trivia",
+          category: 'Sport',
           content: "",
           status: "Published",
         }}

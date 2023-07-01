@@ -7,7 +7,6 @@ const Login = () => {
 
   const loginScheme = object({
     username: string().min(3).max(20).required(),
-    email: string().email().required(),
     password: string().required().min(8).max(20)
     .matches(/\d+/, "Password must contain a number")
     // .matches(/[a-z]/, "Password bir küçük harf içermelidir")
@@ -17,7 +16,7 @@ const Login = () => {
 
   return (
     <div className="flex justify-center items-center h-[calc(100vh-64px)]">
-      <div className="w-full md:w-[70%] lg:w-[90%] max-w-[1200px] mx-auto bg-blue-500 h-full md:h-[100%] lg:h-[70%] p-3 flex justify-center items-center flex-col-reverse lg:flex-row gap-10 lg:gap-20">
+      <div className="w-full md:w-[70%] lg:w-[90%] max-w-[1200px] mx-auto h-full md:h-[100%] lg:h-[70%] p-3 flex justify-center items-center flex-col-reverse lg:flex-row gap-10 lg:gap-20">
         <div>
           <svg
             className="w-72 sm:w-96 lg:w-[450px]"
@@ -61,18 +60,18 @@ const Login = () => {
               points="720.046 337.135 720.046 341.556 264.306 341.556 264.649 341.004 264.649 337.135 720.046 337.135"
               fill="#2f2e41"
             />
-            <circle cx="707.33457" cy="77.37523" r="77.37523" fill="#ffffff" />
+            <circle cx="707.33457" cy="77.37523" r="77.37523" fill="#ffffff" stroke="#3B82F6" strokeWidth={3}/>
             <path
               d="M942.89,285.223H878.77911a4.42582,4.42582,0,0,1-4.42144-4.42145V242.11391a4.42616,4.42616,0,0,1,4.42144-4.42144H942.89a4.42616,4.42616,0,0,1,4.42144,4.42144v38.68761A4.42582,4.42582,0,0,1,942.89,285.223Zm-64.11091-43.10906v38.68761h64.11415L942.89,242.11391Z"
               transform="translate(-203.5 -174.13424)"
-              fill="#fff"
+              fill="#3B82F6"
             />
             <path
               d="M930.73105,242.11391h-39.793V224.42814c0-12.80987,8.36792-22.10721,19.89649-22.10721s19.89648,9.29734,19.89648,22.10721Zm-35.37153-4.42144h30.95009V224.42814c0-10.413-6.36338-17.68576-15.475-17.68576s-15.47505,7.27281-15.47505,17.68576Z"
               transform="translate(-203.5 -174.13424)"
-              fill="#fff"
+              fill="#3B82F6"
             />
-            <circle cx="707.33457" cy="86.21811" r="4.42144" fill="#fff" />
+            <circle cx="707.33457" cy="86.21811" r="4.42144" fill="#3B82F6"  />
             <path
               d="M856.81994,421.28372H538.18006a5.90767,5.90767,0,0,1-5.90073-5.90073V336.342a5.90767,5.90767,0,0,1,5.90073-5.90072H856.81994a5.90767,5.90767,0,0,1,5.90073,5.90072V415.383A5.90767,5.90767,0,0,1,856.81994,421.28372Zm-318.63988-88.4821a3.5443,3.5443,0,0,0-3.54043,3.54043V415.383a3.54431,3.54431,0,0,0,3.54043,3.54044H856.81994a3.54431,3.54431,0,0,0,3.54043-3.54044V336.342a3.5443,3.5443,0,0,0-3.54043-3.54043Z"
               transform="translate(-203.5 -174.13424)"
@@ -122,7 +121,7 @@ const Login = () => {
             <path
               d="M409.41752,423.55243c-27.13873,18.49308-46.31418.63272-60.94729-26.92346,2.03338-16.86188-1.259-37.04061-7.35672-58.96635a40.13762,40.13762,0,0,1,24.50567-48.40124h0l32.06116,13.421c27.22362,22.19038,32.582,46.227,22.36825,71.5784Z"
               transform="translate(-203.5 -174.13424)"
-              fill="#ffffff"
+              fill="#3B82F6"
             />
             <path
               d="M331.32124,326.54178,301.4969,342.19956l52.9382,31.31555,7.366,18.16951a9.63673,9.63673,0,0,1-5.78925,12.73088h0a9.63673,9.63673,0,0,1-12.76159-8.54442l-.74489-12.66307-67.2838-22.20366a15.73306,15.73306,0,0,1-9.87265-9.61147v0a15.733,15.733,0,0,1,5.90262-18.30258l54.10485-37.11845Z"
@@ -132,7 +131,7 @@ const Login = () => {
             <path
               d="M361.14557,329.52422c-12.43861-5.4511-23.74934.47044-38.026,5.21926l-2.23683-39.51725c14.17612-7.55568,27.69209-9.59281,40.26285-3.728Z"
               transform="translate(-203.5 -174.13424)"
-              fill="#ffffff"
+              fill="#3B82F6"
             />
             <circle cx="172.52496" cy="78.09251" r="23.80211" fill="#ffb8b8" />
             <path
@@ -143,9 +142,9 @@ const Login = () => {
           </svg>
         </div>
         <div className="flex flex-col gap-7 justify-center items-center ">
-          <div className="relative w-16 h-16 overflow-hidden border-2 border-white rounded-full">
+          <div className="relative w-16 h-16 overflow-hidden border-2 border-blue-500 rounded-full">
             <svg
-              className="absolute w-20 h-20 text-white -left-2.5"
+              className="absolute w-20 h-20 text-blue-500 -left-2.5"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -158,7 +157,7 @@ const Login = () => {
             </svg>
           </div>
           <Formik
-            initialValues={{ username: "", email: "", password: "" }}
+            initialValues={{ username: "", password: "" }}
             validationSchema={loginScheme}
             onSubmit={(values, actions) => {
               login(values);
@@ -170,7 +169,7 @@ const Login = () => {
               <Form className="flex flex-col gap-5 w-96">
                 <div className="flex flex-col">
                   <Field
-                    className="outline-none px-3 py-1.5 "
+                    className="outline-none px-3 py-1.5 border border-blue-400 rounded"
                     type="text"
                     name="username"
                     id="username"
@@ -178,7 +177,7 @@ const Login = () => {
                   />
                   <ErrorMessage name="username">
                     {(msg) => (
-                      <div className="text-sm font-bold text-center text-red-700">
+                      <div className="text-sm text-center text-red-700">
                         {msg}
                       </div>
                     )}
@@ -186,30 +185,14 @@ const Login = () => {
                 </div>
                 <div className="flex flex-col">
                   <Field
-                    className="outline-none px-3 py-1.5 "
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="email"
-                  />
-                  <ErrorMessage name="email">
-                    {(msg) => (
-                      <div className="text-sm font-bold text-center text-red-700">
-                        {msg}
-                      </div>
-                    )}
-                  </ErrorMessage>
-                </div>
-                <div className="flex flex-col">
-                  <Field
-                    className="outline-none px-3 py-1.5 "
+                    className="outline-none px-3 py-1.5 border border-blue-400 rounded"
                     type="password"
                     name="password"
                     placeholder="password"
                   />
                   <ErrorMessage name="password">
                     {(msg) => (
-                      <div className="text-sm font-bold text-center text-red-700">
+                      <div className="text-sm text-center text-red-700">
                         {msg}
                       </div>
                     )}

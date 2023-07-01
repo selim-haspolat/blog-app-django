@@ -31,11 +31,11 @@ const useBlogCall = () => {
   const navigate = useNavigate();
 
   const baseUrlInstance = axios.create({
-    baseURL: "https://32185.fullstack.clarusway.com/api/",
+    baseURL: "http://127.0.0.1:8000/api/",
   });
 
   const blogInstance = axios.create({
-    baseURL: "https://32185.fullstack.clarusway.com/api/",
+    baseURL: "http://127.0.0.1:8000/api/",
     headers: { Authorization: `Token ${token}` },
   });
 
@@ -62,6 +62,10 @@ const useBlogCall = () => {
       const category = categories.filter(
         (c: Category) => c.name === postBlogInfo.category
       );
+      console.log({
+        ...postBlogInfo,
+        category: category[0].id,
+      });
       await blogInstance.post("blogs/", {
         ...postBlogInfo,
         category: category[0].id,
@@ -69,6 +73,7 @@ const useBlogCall = () => {
       toastSuccessNotify('Blog post successfully')
       getBlogs();
     } catch (error) {
+      console.log(error);
       toastErrorNotify('Blog post failed')
     }
   };
