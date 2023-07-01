@@ -62,10 +62,6 @@ const useBlogCall = () => {
       const category = categories.filter(
         (c: Category) => c.name === postBlogInfo.category
       );
-      console.log({
-        ...postBlogInfo,
-        category: category[0].id,
-      });
       await blogInstance.post("blogs/", {
         ...postBlogInfo,
         category: category[0].id,

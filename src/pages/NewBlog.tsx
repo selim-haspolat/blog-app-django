@@ -8,9 +8,7 @@ import { string, object } from "yup";
 const NewBlog = () => {
   const { getCategories, postBlog } = useBlogCall();
   const { categories } = useSelector((state: any) => state.blog);
-
-  console.log(categories);
-
+  
   useEffect(() => {
     getCategories();
   }, []);
