@@ -23,7 +23,7 @@ const BlogCard = ({ blog }: BlogCardProps) => {
   const navigate = useNavigate();
   const { user } = useSelector((state: any) => state.auth);
   const [like, setLike] = useState(
-    blog.likes_n.filter((l) => l?.user_id === user?.id).length === 1
+    blog.likes_n.filter((l) => l?.user === user?.id).length === 1
   );
   return (
     <div className="container mx-auto rounded-md bg-gray-800 shadow-lg">

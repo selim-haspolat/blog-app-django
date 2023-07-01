@@ -97,7 +97,7 @@ const useBlogCall = () => {
 
   const likeBlog = async (id: number, userId: number) => {
     try {
-      await blogInstance.post(`likes/${id}/`);
+      await blogInstance.post(`likes/`, {user: userId, post: id});
       getBlogs();
       getMyBlogs(userId);
     } catch (error) {

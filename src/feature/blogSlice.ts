@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export interface Likes_n {
   id: number;
-  user_id: number;
-  post_id: number;
+  user: number;
+  post: number;
 }
 
 export interface Blog {
