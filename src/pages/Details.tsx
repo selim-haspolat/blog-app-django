@@ -69,7 +69,7 @@ const Details = () => {
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              id && createComment({ post: id, content: comment });
+              id && createComment(id, { user: user.id, content: comment });
             }}
             className="my-3 flex flex-col"
           >

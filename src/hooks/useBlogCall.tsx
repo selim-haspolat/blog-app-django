@@ -9,7 +9,7 @@ import {
 } from "../feature/blogSlice";
 import { useNavigate } from "react-router-dom";
 
-import { toastErrorNotify, toastSuccessNotify } from '../helper/Toastify'
+import { toastErrorNotify, toastSuccessNotify } from "../helper/Toastify";
 
 interface PostBlogInfo {
   title: string;
@@ -66,11 +66,11 @@ const useBlogCall = () => {
         ...postBlogInfo,
         category: category[0].id,
       });
-      toastSuccessNotify('Blog post successfully')
+      toastSuccessNotify("Blog post successfully");
       getBlogs();
     } catch (error) {
       console.log(error);
-      toastErrorNotify('Blog post failed')
+      toastErrorNotify("Blog post failed");
     }
   };
 
@@ -79,9 +79,9 @@ const useBlogCall = () => {
       await blogInstance.delete(`blogs/${id}/`);
       getBlogs();
       navigate("/");
-      toastSuccessNotify('Blog successfully deleted')
+      toastSuccessNotify("Blog successfully deleted");
     } catch (error) {
-      toastErrorNotify('Blog delet failed')
+      toastErrorNotify("Blog delet failed");
     }
   };
 
@@ -89,15 +89,15 @@ const useBlogCall = () => {
     try {
       await blogInstance.put(`blogs/${id}/`, postBlogInfo);
       getDetails(id);
-      toastSuccessNotify('Blog successfully updated')
+      toastSuccessNotify("Blog successfully updated");
     } catch (error) {
-      toastErrorNotify('Blog edit failed')
+      toastErrorNotify("Blog edit failed");
     }
   };
 
   const likeBlog = async (id: number, userId: number) => {
     try {
-      await blogInstance.post(`likes/`, {user: userId, post: id});
+      await blogInstance.post(`likes/`, { user: userId, post: id });
       getBlogs();
       getMyBlogs(userId);
     } catch (error) {
@@ -115,11 +115,13 @@ const useBlogCall = () => {
   };
 
   const createComment = async (
-    comment: { post: string; content: string }
+    id: string,
+    comment: { user: number; content: string }
   ) => {
     try {
-      await blogInstance.post(`comments/${comment.post}/`, comment);
-      getComments(comment.post);
+      console.log(comment.user);
+      await blogInstance.post(`comments/${id}`, comment);
+      getComments(id);
     } catch (error) {
       console.log(error);
     }
