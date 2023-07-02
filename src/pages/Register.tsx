@@ -9,8 +9,11 @@ const Register = () => {
     username: string().min(3).max(20).required(),
     email: string().email().required(),
     password: string().required().min(8).max(20),
-    password2: string().required().min(8).max(20)
-    .matches(/\d+/, "Password must contain a number")
+    password2: string()
+      .required()
+      .min(8)
+      .max(20)
+      .matches(/\d+/, "Password must contain a number"),
     // .matches(/[a-z]/, "Password bir küçük harf içermelidir")
     // .matches(/[A-Z]/, "Password bir büyük harf içermelidir")
     // .matches(/[!,?{}><%&$#£+-.]+/, "Password bir özel karakter içermelidir"),
@@ -20,7 +23,7 @@ const Register = () => {
     <div className="flex justify-center items-center h-[calc(100vh-64px)]">
       <div className="w-full md:w-[70%] lg:w-[90%] max-w-[1200px] mx-auto h-full md:h-[100%] lg:h-[70%] p-3 flex justify-center items-center flex-col-reverse lg:flex-row gap-10 lg:gap-20">
         <div>
-        <svg
+          <svg
             className="w-72 sm:w-96 lg:w-[450px]"
             xmlns="http://www.w3.org/2000/svg"
             data-name="Layer 1"
@@ -62,7 +65,14 @@ const Register = () => {
               points="720.046 337.135 720.046 341.556 264.306 341.556 264.649 341.004 264.649 337.135 720.046 337.135"
               fill="#2f2e41"
             />
-            <circle cx="707.33457" cy="77.37523" r="77.37523" fill="#ffffff" stroke="#3B82F6" strokeWidth={3}/>
+            <circle
+              cx="707.33457"
+              cy="77.37523"
+              r="77.37523"
+              fill="#ffffff"
+              stroke="#3B82F6"
+              strokeWidth={3}
+            />
             <path
               d="M942.89,285.223H878.77911a4.42582,4.42582,0,0,1-4.42144-4.42145V242.11391a4.42616,4.42616,0,0,1,4.42144-4.42144H942.89a4.42616,4.42616,0,0,1,4.42144,4.42144v38.68761A4.42582,4.42582,0,0,1,942.89,285.223Zm-64.11091-43.10906v38.68761h64.11415L942.89,242.11391Z"
               transform="translate(-203.5 -174.13424)"
@@ -73,7 +83,7 @@ const Register = () => {
               transform="translate(-203.5 -174.13424)"
               fill="#3B82F6"
             />
-            <circle cx="707.33457" cy="86.21811" r="4.42144" fill="#3B82F6"  />
+            <circle cx="707.33457" cy="86.21811" r="4.42144" fill="#3B82F6" />
             <path
               d="M856.81994,421.28372H538.18006a5.90767,5.90767,0,0,1-5.90073-5.90073V336.342a5.90767,5.90767,0,0,1,5.90073-5.90072H856.81994a5.90767,5.90767,0,0,1,5.90073,5.90072V415.383A5.90767,5.90767,0,0,1,856.81994,421.28372Zm-318.63988-88.4821a3.5443,3.5443,0,0,0-3.54043,3.54043V415.383a3.54431,3.54431,0,0,0,3.54043,3.54044H856.81994a3.54431,3.54431,0,0,0,3.54043-3.54044V336.342a3.5443,3.5443,0,0,0-3.54043-3.54043Z"
               transform="translate(-203.5 -174.13424)"
@@ -176,7 +186,7 @@ const Register = () => {
               <Form className="flex flex-col gap-5 w-96">
                 <div className="flex flex-col">
                   <Field
-                    className="outline-none px-3 py-1.5"
+                    className="outline-none px-3 py-1.5 border border-blue-400 rounded"
                     type="text"
                     id="username"
                     name="username"
@@ -195,7 +205,7 @@ const Register = () => {
 
                 <div className="flex flex-col">
                   <Field
-                    className="outline-none px-3 py-1.5 "
+                    className="outline-none px-3 py-1.5 border border-blue-400 rounded"
                     type="email"
                     id="email"
                     name="email"
@@ -212,7 +222,7 @@ const Register = () => {
 
                 <div className="flex flex-col">
                   <Field
-                    className="outline-none px-3 py-1.5 "
+                    className="outline-none px-3 py-1.5 border border-blue-400 rounded"
                     type="password"
                     id="password"
                     name="password"
@@ -229,7 +239,7 @@ const Register = () => {
 
                 <div className="flex flex-col">
                   <Field
-                    className="outline-none px-3 py-1.5 "
+                    className="outline-none px-3 py-1.5 border border-blue-400 rounded"
                     type="password"
                     id="password2"
                     name="password2"
