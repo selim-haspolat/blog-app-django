@@ -35,10 +35,10 @@ const authSlice = createSlice({
       state.user = user;
       state.token = key;
     },
-    registerSuccess: (state, { payload }) => {
+    registerSuccess: (state, { payload: { user, key } }) => {
       state.loading = false;
-      state.user = payload;
-      state.token = payload.token;
+      state.user = user;
+      state.token = key;
     },
     logoutSuccess: (state) => {
       state.loading = false;

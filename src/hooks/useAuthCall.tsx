@@ -49,13 +49,8 @@ const useAuthCall = () => {
     try {
       let { data } = await axios.post(`${BASE_URL}users/register/`, info);
       navigate("/");
-      data = {
-        ...data,
-        image:
-          "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
-      };
       toastSuccessNotify('Register succes')
-      localStorage.setItem("user", JSON.stringify(data));
+      localStorage.setItem("user", JSON.stringify({...data.user, token: data.key}));
       dispatch(registerSuccess(data));
     } catch (error: any) {
       toastErrorNotify(error.message)
